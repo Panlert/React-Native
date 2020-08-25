@@ -1,13 +1,21 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 
 export default function Forecast(props){
     return(
         <View>
-            <Text>{props.main}</Text>
-            <Text>{props.description}</Text>
-            <Text>{props.temp}</Text>
-            <Text>°C</Text>
+            <Text style = {style2.textFront}>{props.main}</Text>
+            <Text style = {style2.textFront}>{props.description}</Text>
+            <Text style = {style2.textFront}>{props.temp}</Text>
+            <Text style = {style2.textFront}>°C</Text>
         </View>
     )
 }
+
+const style2 = StyleSheet.create({
+    textFront: {
+        color: "white",
+        fontSize: 25,
+        paddingLeft: 50
+    }
+})
