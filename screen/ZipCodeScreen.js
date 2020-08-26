@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlatList, View, Text, StyleSheet } from 'react-native'
+import { FlatList, View, Text, StyleSheet, ImageBackground } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { TouchableHighlight } from 'react-native-gesture-handler'
 import { StatusBar } from 'expo-status-bar'
@@ -17,9 +17,11 @@ const Zipitem = ({place, code, navigation}) => (
     <TouchableHighlight onPress={() => {
         navigation.navigate('Weather', {zipCode: code})
     }}>
-        <View style = {styles.zipItem}>
-            <Text>{place}</Text>
-            <Text>{code}</Text>
+        <View style = {styles.zipPlace}>
+            <View style = {styles.zipItem}>
+                <Text style = {styles.zipCode}>{place} </Text>
+                <Text style = {styles.zipCode}>{code}</Text>
+            </View>
         </View>
     </TouchableHighlight>
 )
@@ -44,12 +46,16 @@ const styles = StyleSheet.create({
     zipItem: {
         flex: 1,
         flexDirection: 'row',
-        
+        padding: 40
     },
     zipPlace: {
-        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     zipCode: {
-        flex: 1,
+        textTransform: 'uppercase',
+        fontSize: 20,
+        fontWeight: 'bold',
     },
+
 })
