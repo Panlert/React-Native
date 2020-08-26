@@ -17,7 +17,7 @@ const Zipitem = ({place, code, navigation}) => (
     <TouchableHighlight onPress={() => {
         navigation.navigate('Weather', {zipCode: code})
     }}>
-        <ImageBackground source={require('../bg.jpg')} style={styles.zipItem}>
+        <ImageBackground source={require('../home_bg.jpg')} style={styles.zipItem}>
             <View style = {styles.zipPlace}>
                 <View style = {styles.zipItem}>
                     <Text style = {styles.zipCode}>{place} </Text>
