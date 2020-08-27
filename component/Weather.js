@@ -16,6 +16,7 @@ export default function Weather(props){
             .then((response) => response.json())
             .then((json) => {
                 setForecastInfo({
+                    code: `${props.zipCode}`,
                     main: json.weather[0].main,
                     description: json.weather[0].description,
                     temp: json.main.temp
