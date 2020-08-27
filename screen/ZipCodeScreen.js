@@ -1,7 +1,7 @@
 import React from 'react'
-import { FlatList, View, Text, StyleSheet, ImageBackground } from 'react-native'
+import { FlatList, View, Text, StyleSheet, ImageBackground, Button } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import { TouchableHighlight } from 'react-native-gesture-handler'
+import { TouchableHighlight, TextInput } from 'react-native-gesture-handler'
 import { StatusBar } from 'expo-status-bar'
 
 const availableZipItems = [
@@ -11,7 +11,6 @@ const availableZipItems = [
     { place: 'Khonkaen', code: '40000' },
     { place: 'Chonburi', code: '20000' },
 ]
-   
 
 const Zipitem = ({place, code, navigation}) => (
     <TouchableHighlight onPress={() => {
@@ -26,12 +25,15 @@ const Zipitem = ({place, code, navigation}) => (
             </View>
         </ImageBackground>
     </TouchableHighlight>
+    
 )
+
 
 const _keyExtrator = item => item.code
 
 export default function ZipCodeScreen(){
     const navigation = useNavigation()
+
     return (
         <View>
             <FlatList
@@ -60,5 +62,19 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: 'white'
     },
+    textBox: { 
+        height: 50,
+        width: 280,
+        borderColor: 'gray', 
+        borderWidth: 2,
+     },
+     textPlace: {
+         paddingLeft: 40,
+         paddingTop: 200
+     },
+     backdrop: {
+         height: '100%',
+         width: '100%'
 
+     }
 })
